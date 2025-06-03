@@ -7,6 +7,30 @@
     margin: 8px;
     font-size: 13px;
     padding: 5px;
+
+    transform-origin: left top;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse nos campos do formulário */
+.fordform:hover{
+    border-color: #007bff; /* Azul claro */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul suave */
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.02);
+}
+
+.fordform:hover:placeholder{
+    color: #007bff;
+    opacity: 0.8;
+}
+.fordform:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.6);
+}
+
+select.fordform:hover {
+    border-color: #007BFF;
 }
 
 select.fordform {
@@ -48,7 +72,21 @@ button {
     margin-right: 8px;
     float: right;
 }
+/* ====== HOVER - Efeito ao passar o mouse ====== */
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+    transform: scale(1.05); /* Leve aumento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== ACTIVE - Efeito ao clicar ====== */
+button:active {
+    transform: scale(0.98); /* Pequena contração ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 .titulo {
     margin-left: 8px;
 }
+
+

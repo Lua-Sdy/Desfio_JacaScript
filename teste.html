@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Efeito Visual</title>
+    <style>
+        /* Estilo básico dos inputs */
+        .input-field {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Efeito ao passar o mouse */
+        .input-field:hover {
+            border-color: #007bff; /* Azul claro */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul suave */
+        }
+
+        /* Botão de envio */
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <h2>Sobre Você</h2>
+    <form id="contact-form">
+        <input type="text" class="input-field" placeholder="NOME*" required>
+        <input type="email" class="input-field" placeholder="E-MAIL*" required>
+        <input type="text" class="input-field" placeholder="CPF*" required>
+        <input type="text" class="input-field" placeholder="SOBRENOME*" required>
+        <input type="tel" class="input-field" placeholder="TELEFONE*" required>
+        <select class="input-field" required>
+            <option value="">COMO DESEJA SER CONTATADO</option>
+            <option value="email">Email</option>
+            <option value="telefone">Telefone</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Adicionando efeito personalizado via JavaScript (opcional)
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('mouseover', () => {
+                input.style.border = '2px solid #007bff'; // Altera a cor da borda
+                input.style.boxShadow = '0 0 5px rgba(0, 123, 255, 0.5)'; // Adiciona sombra
+            });
+
+            input.addEventListener('mouseout', () => {
+                input.style.border = '2px solid #ccc'; // Restaura a cor original
+                input.style.boxShadow = 'none'; // Remove a sombra
+            });
+        });
+    </script>
+</body>
+</html>

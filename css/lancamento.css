@@ -1,85 +1,212 @@
 
+/* Estilização da lista de modelos de carros */
 ul.modelcars {
-    display: block;
-    text-align: center;
-    margin-bottom: 40px;
+    display: block; /* Garante que a lista ocupe uma linha completa */
+    text-align: center; /* Centraliza os itens da lista */
+    margin-bottom: 40px; /* Espaço inferior para separar de outros elementos */
 }
 
+/* Estilo dos itens da lista (cada carro) */
 ul.modelcars li {
-    display: inline-block;
-    text-align: left;
-    width: 300px;
-    vertical-align: top;
+    display: inline-block; /* Mostra os itens lado a lado */
+    text-align: left; /* Alinha texto à esquerda dentro de cada item */
+    width: 300px; /* Define largura fixa para todos os blocos */
+    vertical-align: top; /* Alinha os itens no topo */
 }
 
+/* Estilo das imagens dos carros */
 img.photocar {
-    display: block;
-    width: 250px;
+    display: block; /* Transforma a imagem em bloco */
+    width: 250px; /* Define largura da imagem */
 }
 
+/* Estilo dos checkboxes personalizados */
 .checkbox {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #1b357e;
+    width: 30px; /* Largura do checkbox */
+    height: 30px; /* Altura do checkbox */
+    border: 1px solid #1b357e; /* Borda azul escuro */
 }
 
+/* Alinha elementos filhos lado a lado dentro de .infocar */
 .infocar div {
     display: inline-block;
 }
 
+/* Define largura e alinhamento para área de texto/informações */
 .info {
-    width: 200px;
-    vertical-align: top;
+    width: 200px; /* Largura da área de informações */
+    vertical-align: top; /* Alinha conteúdo com o topo */
 }
 
+/* Estilo do nome do modelo do carro */
 .textmodel {
-    display: block;
-    text-align: left;
-    font-size: 14px;
-    color: #1351d8;
-    
+    display: block; /* Faz o texto ocupar uma linha inteira */
+    text-align: left; /* Alinha texto à esquerda */
+    font-size: 14px; /* Tamanho da fonte */
+    color: #1351d8; /* Cor azul vibrante para o modelo */
 }
+
+/* Estilo do preço do carro */
 .textprice {
-    display: block;
-    text-align: left;
-    font-size: 10px;
+    display: block; /* Faz o texto ocupar uma linha inteira */
+    text-align: left; /* Alinha texto à esquerda */
+    font-size: 10px; /* Tamanho menor, indica informação secundária */
 }
 
+
+/* == TABELA DE COMPARAÇÃO == */
+
+
+/* Estilo geral da tabela de comparação */
 table {
-    border-collapse: collapse;
-    width: 80%;
-    margin-left: auto;
+    border-collapse: collapse; /* Remove espaçamento entre bordas */
+    width: 80%; /* A tabela ocupa 80% da tela */
+    margin-left: auto; /* Centraliza horizontalmente */
     margin-right: auto;
-    margin-top: 2vh;
-    margin-bottom: 10px;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
+    margin-top: 2vh; /* Espaço acima da tabela */
+    margin-bottom: 10px; /* Espaço abaixo da tabela */
+}
 
-  td:nth-child(1) {  
-    font-weight: 700;
-    width: 40%;
-  }
+/* Estilo das células da tabela */
+th, td {
+    text-align: left; /* Alinha conteúdo à esquerda */
+    padding: 8px; /* Espaçamento interno das células */
+}
 
-  tr:nth-child(even) {background-color: #f2f2f2;}
+/* Estilo da primeira coluna (geralmente nomes de características) */
+td:nth-child(1) {  
+    font-weight: 700; /* Texto em negrito */
+    width: 40%; /* Ocupa 40% da largura total da tabela */
+}
 
+/* Fundo claro nas linhas pares para melhor leitura */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* == JANELA MODAL DE COMPARAÇÃO == */
+
+
+/* Estilo da janela modal de comparação de carros */
 div#compare {
-    position: absolute;
-    display: none;
-    width: 50vw;
-    max-width: 800px;
-    min-width: 400px;
-    height: 80vh;
-    max-height: 700px;
-    min-height: 350px;
-    background: #fff;
-    top: calc(100vh - 80%);
-    left: 25vw;
-    border-radius: 10px;
-    padding: 10px;
-    -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
+    position: absolute; /* Posiciona relativo ao primeiro elemento pai posicionado */
+    display: none; /* Inicialmente oculta */
+    width: 50vw; /* Largura responsiva */
+    max-width: 800px; /* Máximo de 800px */
+    min-width: 400px; /* Mínimo de 400px */
+    height: 80vh; /* Altura responsiva */
+    max-height: 700px; /* Máximo de 700px */
+    min-height: 350px; /* Mínimo de 350px */
+    background: #fff; /* Fundo branco */
+    top: calc(100vh - 80%); /* Posição vertical */
+    left: 25vw; /* Posição horizontal */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 10px; /* Espaçamento interno */
+    -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%); /* Sombra suave */
     box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
+}
+
+
+/* == RESPONSIVIDADE DA JANELA MODAL == */
+
+
+@media (max-width: 1024px) {
+    div#compare {
+        height: 200vh;
+        max-height: 610px;
+        min-height: 200px;
+        left: 0vw;
+        transform: scale(90%);
+    }
+}
+
+@media (max-width: 980px) {
+    div#compare {
+        height: 200vh;
+        max-height: 610px;
+        min-height: 200px;
+        left: 0vw;
+        transform: scale(70%);
+    }
+}
+
+@media (max-width: 979px) {
+    div#compare {
+        height: 200vh;
+        max-height: 620px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
+}
+
+@media (max-width: 889px) {
+    div#compare {
+        height: 200vh;
+        max-height: 640px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
+}
+
+@media (max-width: 854px) {
+    div#compare {
+        height: 200vh;
+        max-height: 650px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
+}
+
+@media (max-width: 853px) {
+    div#compare {
+        height: 200vh;
+        max-height: 680px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
+}
+
+@media (max-width: 848px) {
+    div#compare {
+        height: 200vh;
+        max-height: 700px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
+}
+
+@media (max-width: 840px) {
+    div#compare {
+        height: 200vh;
+        max-height: 700px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
+}
+
+@media (max-width: 839px) {
+    div#compare {
+        height: 200vh;
+        max-height: 720px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
+}
+
+@media (max-width: 430px) {
+    div#compare {
+        height: 200vh;
+        max-height: 730px;
+        min-height: 300px;
+        left: 0vw;
+        transform: scale(65%);
+    }
 }
