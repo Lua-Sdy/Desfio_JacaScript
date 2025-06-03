@@ -46,14 +46,18 @@ function Enviar(data) {
 
 
 // Adicionando efeito personalizado via JavaScript 
-document.querySelectorAll('.input-field').forEach(input => {
+document.querySelectorAll('.fordform').forEach(input => {
     input.addEventListener('mouseover', () => {
         input.style.border = '2px solid #007bff'; // Altera a cor da borda
         input.style.boxShadow = '0 0 5px rgba(0, 123, 255, 0.5)'; // Adiciona sombra
+        input.style.transform = 'scale(1.05)';
+        
     });
 
     input.addEventListener('mouseout', () => {
         input.style.border = '2px solid #ccc'; // Restaura a cor original
         input.style.boxShadow = 'none'; // Remove a sombra
+         input.style.transform = 'scale(1)';
     });
 });
+

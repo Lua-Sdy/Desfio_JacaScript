@@ -38,12 +38,12 @@ class Carousel {
 
             // Adiciona eventos nos botões
             document.getElementById("prevBtn").addEventListener("click", () => {
-               // clearInterval(Carousel._interval); // Para o autoplay
+                // clearInterval(Carousel._interval); // Para o autoplay
                 Carousel.Prev(); // Volta uma imagem
             });
 
             document.getElementById("nextBtn").addEventListener("click", () => {
-               // clearInterval(Carousel._interval); // Para o autoplay
+                // clearInterval(Carousel._interval); // Para o autoplay
                 Carousel.Next(); // Avança uma imagem
             });
         } else {
@@ -51,6 +51,32 @@ class Carousel {
         }
     }
 
+    // Método Prev - volta para a imagem anterior
+    // Método Prev - volta para a imagem anterior
+    static Prev() {
+        Carousel._sequence = (Carousel._sequence - 1 + Carousel._size) % Carousel._size;
+        Carousel.showCurrent(); // Mostra a imagem sem alterar a sequência novamente
+    }
+
+    // Novo método para exibir a imagem atual
+    static showCurrent() {
+        let item = carouselArr[Carousel._sequence];
+
+        if (!item) {
+            console.error("Item not found in carousel array at index: " + Carousel._sequence);
+            return;
+        }
+
+        document.getElementById("carousel-title").innerHTML = item.title;
+
+        document.getElementById("carousel").innerHTML = `
+        <a href="${item.url}">
+            <img src="${item.img}" alt="${item.title}">
+        </a>
+    `;
+
+        Carousel.updateIndicators();
+    }
     // Método Next - avança para a próxima imagem
     static Next() {
         let item = carouselArr[Carousel._sequence];
@@ -78,12 +104,7 @@ class Carousel {
         Carousel._sequence = (Carousel._sequence + 1) % Carousel._size;
     }
 
-    // Método Prev - volta para a imagem anterior
-    static Prev() {
-        // Volta uma posição (com segurança)
-        Carousel._sequence = (Carousel._sequence - 1 + Carousel._size) % Carousel._size;
-        Carousel.Next(); // Atualiza tela
-    }
+
 
     // Método createIndicators - cria os pontinhos embaixo
     static createIndicators() {
@@ -94,7 +115,7 @@ class Carousel {
 
             // Adiciona evento de clique para pular para essa imagem
             indicator.addEventListener("click", () => {
-               // clearInterval(Carousel._interval); // Para o autoplay
+                // clearInterval(Carousel._interval); // Para o autoplay
                 Carousel._sequence = i; // Define nova posição
                 Carousel.Next(); // Atualiza tela
             });
