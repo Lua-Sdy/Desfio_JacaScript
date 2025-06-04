@@ -62,6 +62,30 @@ html {
     margin-top: 10px;
 }
 
+/* Botão de navegação à esquerda */
+.carousel-controls #prevBtn {
+    position: absolute;
+    left: 300px; /* Posiciona o botão à esquerda */
+    top: 300px; /* Posiciona o botão na parte inferior */
+}
+
+/* Botão de navegação à direita */
+.carousel-controls #nextBtn {
+    position: absolute;
+    right: 300px; /* Posiciona o botão à direita */
+    top: 300px; /* Posiciona o botão na parte inferior */
+}
+
+@media (max-width: 768px) {
+    .carousel-controls #prevBtn {
+        left: 80px; /* Posiciona o botão à esquerda */
+    }
+    
+    .carousel-controls #nextBtn {
+        right: 80px; /* Posiciona o botão à direita */
+    }
+    
+}
 .carousel-indicators span {
     height: 10px;
     width: 10px;
@@ -162,4 +186,36 @@ button {
     color: #fff;
     border: 0px;
     border-radius: 10px;
+}
+@media (max-width: 740px) {
+
+header {
+    display: flex ;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+header div{
+    display: flex ;
+    align-items: center;
+    text-align: center;
+   
+}
+
+    footer{
+        display: flex ;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        gap: 5px;
+}
+
+footer div{
+    display: flex;
+    margin-right: 0px;
+   
+}
+
 }
